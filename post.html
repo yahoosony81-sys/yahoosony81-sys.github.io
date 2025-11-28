@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 - yahoosony81-sys Blog</title>
+  <meta name="description" content="yahoosony81-sys의 블로그 게시글">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
+  
+  <!-- marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- Prism.js for code highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">yahoosony81-sys</span>
+        </a>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">← 목록으로</a>
+          <button id="theme-toggle" class="theme-btn" aria-label="테마 전환">
+            <span class="theme-icon sun">☀️</span>
+            <span class="theme-icon moon">🌙</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main post-page">
+      <!-- Post Header -->
+      <article class="post-article">
+        <header class="post-header">
+          <h1 class="post-title" id="post-title">로딩 중...</h1>
+          <div class="post-meta" id="post-meta">
+            <span class="post-date" id="post-date"></span>
+            <span class="post-category" id="post-category"></span>
+          </div>
+          <div class="post-tags" id="post-tags"></div>
+        </header>
+
+        <!-- Post Content -->
+        <div class="post-content" id="post-content">
+          <div class="loading-state">
+            <div class="loader"></div>
+            <p>게시글을 불러오는 중...</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Comments (Giscus) -->
+      <section class="comments-section">
+        <h2 class="comments-title">💬 댓글</h2>
+        <div id="giscus-container"></div>
+      </section>
+
+      <!-- Post Navigation -->
+      <nav class="post-nav" id="post-nav">
+        <a href="index.html" class="post-nav-link">
+          <span class="post-nav-icon">←</span>
+          <span>모든 게시글 보기</span>
+        </a>
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 yahoosony81-sys. Built with ♥</p>
+      <p class="footer-links">
+        <a href="https://github.com/yahoosony81-sys" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/post-loader.js"></script>
+</body>
+</html>
+

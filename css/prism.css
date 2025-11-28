@@ -1,0 +1,270 @@
+/* ============================================
+   Prism.js Custom Theme - Warm Minimal
+   Based on One Dark theme with warm accents
+   ============================================ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #abb2bf;
+  background: none;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  tab-size: 2;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow: auto;
+  border-radius: 8px;
+  background: #282c34;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  white-space: normal;
+  background: #282c34;
+}
+
+/* Light theme adjustments */
+:root:not([data-theme="dark"]) pre[class*="language-"] {
+  background: #1e2127;
+}
+
+/* Token colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #abb2bf;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #e06c75;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #98c379;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #56b6c2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c678dd;
+}
+
+.token.function,
+.token.class-name {
+  color: #61afef;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d19a66;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* Line highlighting */
+.line-highlight {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #e85d04;
+  margin-left: -1.25rem;
+  padding-left: calc(1.25rem - 3px);
+}
+
+/* Line numbers */
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em;
+  letter-spacing: -1px;
+  border-right: 1px solid #3b4048;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+  content: counter(linenumber);
+  color: #4b5263;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+/* Toolbar */
+div.code-toolbar {
+  position: relative;
+}
+
+div.code-toolbar > .toolbar {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+div.code-toolbar:hover > .toolbar {
+  opacity: 1;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item {
+  display: inline-block;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+  color: #abb2bf;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #3b4048;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar > .toolbar-item > a:hover {
+  background: #4b5263;
+}
+
+/* Selection */
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+  background: #3e4451;
+  color: inherit;
+}
+
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection {
+  background: #3e4451;
+  color: inherit;
+}
+
+/* Scrollbar styling for code blocks */
+pre[class*="language-"]::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+  background: #21252b;
+  border-radius: 4px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+  background: #4b5263;
+  border-radius: 4px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+  background: #5c6370;
+}
+
+/* Language label */
+pre[class*="language-"]::before {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5c6370;
+  background: #21252b;
+  border-radius: 0 8px 0 4px;
+}
+
+pre[class*="language-"] {
+  position: relative;
+}
+
+/* Clean up language labels */
+pre.language-javascript::before { content: 'js'; }
+pre.language-typescript::before { content: 'ts'; }
+pre.language-python::before { content: 'py'; }
+pre.language-html::before { content: 'html'; }
+pre.language-css::before { content: 'css'; }
+pre.language-bash::before,
+pre.language-shell::before { content: 'bash'; }
+pre.language-json::before { content: 'json'; }
+pre.language-yaml::before { content: 'yaml'; }
+pre.language-markdown::before { content: 'md'; }
+pre.language-sql::before { content: 'sql'; }
+

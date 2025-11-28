@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yahoosony81-sys Blog</title>
+  <meta name="description" content="yahoosony81-sys의 개인 블로그">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
+  
+  <!-- Prism.js for code highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">yahoosony81-sys</span>
+        </a>
+        <nav class="nav">
+          <button id="theme-toggle" class="theme-btn" aria-label="테마 전환">
+            <span class="theme-icon sun">☀️</span>
+            <span class="theme-icon moon">🌙</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1 class="hero-title">Welcome to My Blog</h1>
+        <p class="hero-subtitle">개발 이야기와 기술 노트를 기록합니다</p>
+      </section>
+
+      <!-- Search & Filter -->
+      <section class="search-section">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="게시글 검색..."
+            aria-label="게시글 검색"
+          >
+          <span class="search-icon">🔍</span>
+        </div>
+        
+        <!-- Tags Filter -->
+        <div class="tags-filter" id="tags-filter">
+          <button class="tag-btn active" data-tag="all">전체</button>
+        </div>
+      </section>
+
+      <!-- Posts Grid -->
+      <section class="posts-section">
+        <div class="posts-grid" id="posts-grid">
+          <!-- Posts will be loaded here by JavaScript -->
+        </div>
+        
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <span class="empty-icon">📭</span>
+          <p class="empty-text">게시글이 없습니다</p>
+        </div>
+        
+        <!-- Loading State -->
+        <div class="loading-state" id="loading-state">
+          <div class="loader"></div>
+          <p>게시글을 불러오는 중...</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 yahoosony81-sys. Built with ♥</p>
+      <p class="footer-links">
+        <a href="https://github.com/yahoosony81-sys" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
