@@ -197,7 +197,16 @@
    * Giscus 댓글 시스템 로드
    */
   function loadGiscus() {
-    if (!giscusContainer) return;
+    if (!giscusContainer) {
+      console.warn('Giscus container not found');
+      return;
+    }
+
+    // 이미 스크립트가 추가되었는지 확인
+    if (giscusContainer.querySelector('script[src*="giscus.app"]')) {
+      console.log('Giscus script already loaded');
+      return;
+    }
 
     // Giscus 설정
     // ⚠️ 아래 값들을 본인의 GitHub 저장소 정보로 변경하세요!
@@ -220,12 +229,25 @@
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
+    // 에러 처리
+    script.onerror = function() {
+      console.error('Failed to load Giscus script');
+      giscusContainer.innerHTML = `
+        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+          <p>댓글 시스템을 불러올 수 없습니다.</p>
+          <p style="font-size: 0.875rem; margin-top: 0.5rem;">
+            GitHub Discussions가 활성화되어 있고 Giscus 앱이 설치되어 있는지 확인해주세요.
+          </p>
+        </div>
+      `;
+    };
+
     giscusContainer.appendChild(script);
 
     // 테마 변경 시 Giscus 테마도 변경
     window.addEventListener('themechange', (e) => {
       const iframe = document.querySelector('iframe.giscus-frame');
-      if (iframe) {
+      if (iframe && iframe.contentWindow) {
         iframe.contentWindow.postMessage(
           {
             giscus: {
